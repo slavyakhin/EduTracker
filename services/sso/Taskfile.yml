@@ -1,0 +1,9 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  migrate:
+    desc: "run cmd/migrator"
+    cmds:
+      - go run ./cmd/migrator --migrations-path=./migrations
