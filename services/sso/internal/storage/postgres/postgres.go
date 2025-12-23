@@ -91,5 +91,24 @@ func (s *Storage) IsAdmin(
 	ctx context.Context,
 	userID int64,
 ) (bool, error) {
+	const op = "storage.postgres.IsAdmin"
 
+	stmt, err := s.db.Prepare("SELECT is_admin FROM users WHERE id = $1")
+	if err != nil {
+		return false, fmt.Errorf("%s: %w", op, err)
+	}
+
+	row := stmt.QueryRowContext(ctx, userID)
+
+	var is_admin bool
+	err = row.Scan(is_admin)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return false, fmt.Errorf("%s: %w", op, storage.ErrUserNotFound)
+		}
+
+		return false, fmt.Errorf("%s: %w", op, err)
+	}
+
+	return is_admin, nil
 }
