@@ -2,9 +2,12 @@ package auth
 
 import (
 	"context"
+	"errors"
 	"net/mail"
 
 	ssov1 "github.com/slavyakhin/EduTracker/protos/gen/go/sso"
+	"github.com/slavyakhin/EduTracker/services/sso/internal/services/auth"
+	"github.com/slavyakhin/EduTracker/services/sso/internal/storage"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -47,7 +50,10 @@ func (s *serverAPI) Register(
 
 	userID, err := s.auth.RegisterNewUser(ctx, req.GetEmail(), req.GetPassword())
 	if err != nil {
-		// TODO: error handling
+		if errors.Is(err, storage.ErrUserExists) {
+			return nil, status.Error(codes.AlreadyExists, "user already exists")
+		}
+
 		return nil, status.Error(codes.Internal, "internal error")
 	}
 
@@ -67,7 +73,10 @@ func (s *serverAPI) Login(
 
 	token, err := s.auth.Login(ctx, req.GetEmail(), req.GetPassword(), int(req.GetAppId()))
 	if err != nil {
-		// TODO: error handling
+		if errors.Is(err, auth.ErrInvalidCredentials) {
+			return nil, status.Error(codes.InvalidArgument, "invalid email or password")
+		}
+
 		return nil, status.Error(codes.Internal, "internal error")
 	}
 
@@ -87,7 +96,10 @@ func (s *serverAPI) IsAdmin(
 
 	isAdmin, err := s.auth.isAdmin(ctx, req.GetUserId())
 	if err != nil {
-		// TODO: error handling
+		if errors.Is(err, storage.ErrUserNotFound) {
+			return nil, status.Error(codes.NotFound, "user not found")
+		}
+
 		return nil, err
 	}
 
