@@ -7,6 +7,7 @@ import (
 	"fmt"
 
 	"github.com/jackc/pgx"
+	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/slavyakhin/EduTracker/services/sso/internal/domain/models"
 	"github.com/slavyakhin/EduTracker/services/sso/internal/storage"
 )
@@ -37,12 +38,15 @@ func (s *Storage) SaveUser(
 ) (int64, error) {
 	const op = "storage.postgres.SaveUser"
 
-	stmt, err := s.db.Prepare("INSERT INTO users(email, pass_hash) VALUES($1, $2)")
+	stmt, err := s.db.Prepare("INSERT INTO users(email, pass_hash) VALUES($1, $2) RETURNING id")
 	if err != nil {
 		return 0, fmt.Errorf("%s: %w", op, err)
 	}
 
-	res, err := stmt.ExecContext(ctx, email, passHash)
+	var id int64
+
+	err = stmt.QueryRowContext(ctx, email, passHash).Scan(&id)
+
 	if err != nil {
 		var pgxErr pgx.PgError
 
@@ -50,11 +54,6 @@ func (s *Storage) SaveUser(
 			return 0, fmt.Errorf("%s: %w", op, storage.ErrUserExists)
 		}
 
-		return 0, fmt.Errorf("%s: %w", op, err)
-	}
-
-	id, err := res.LastInsertId()
-	if err != nil {
 		return 0, fmt.Errorf("%s: %w", op, err)
 	}
 
@@ -101,7 +100,7 @@ func (s *Storage) IsAdmin(
 	row := stmt.QueryRowContext(ctx, userID)
 
 	var is_admin bool
-	err = row.Scan(is_admin)
+	err = row.Scan(&is_admin)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return false, fmt.Errorf("%s: %w", op, storage.ErrUserNotFound)
