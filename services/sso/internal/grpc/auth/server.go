@@ -24,7 +24,10 @@ type Auth interface {
 		email string,
 		password string,
 	) (userID int64, err error)
-	isAdmin(ctx context.Context, userID int64) (bool, error)
+	IsAdmin(
+		ctx context.Context,
+		userID int64,
+	) (bool, error)
 }
 
 type serverAPI struct {

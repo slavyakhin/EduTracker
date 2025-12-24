@@ -5,6 +5,8 @@ import (
 	"time"
 
 	grpcapp "github.com/slavyakhin/EduTracker/services/sso/internal/app/grpc"
+	"github.com/slavyakhin/EduTracker/services/sso/internal/services/auth"
+	"github.com/slavyakhin/EduTracker/services/sso/internal/storage/postgres"
 )
 
 type App struct {
@@ -14,14 +16,17 @@ type App struct {
 func New(
 	log *slog.Logger,
 	grpcPort int,
-	storagePath string,
+	storageURI string,
 	tokenTTL time.Duration,
 ) *App {
-	// TODO: init storage
+	storage, err := postgres.New(storageURI)
+	if err != nil {
+		panic(err)
+	}
 
-	// TODO: init auth
+	authService := auth.New(log, storage, storage, storage, tokenTTL)
 
-	grpcApp := grpcapp.New(log, grpcPort)
+	grpcApp := grpcapp.New(log, authService, grpcPort)
 
 	return &App{
 		GRPCSrv: grpcApp,
