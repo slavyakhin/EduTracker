@@ -23,15 +23,9 @@ func main() {
 
 	log.Info("starting application", slog.Any("config", cfg))
 
-	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.TokenTTL)
+	application := app.New(log, cfg.GRPC.Port, cfg.StorageURI, cfg.TokenTTL)
 
 	go application.GRPCSrv.MustRun()
-
-	// TODO: init app
-
-	// TODO: start app grpc server
-
-	// Graceful shutdown
 
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, syscall.SIGTERM, syscall.SIGINT)
