@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/jackc/pgx"
+	"github.com/jackc/pgx/v5/pgconn"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/slavyakhin/EduTracker/services/sso/internal/domain/models"
 	"github.com/slavyakhin/EduTracker/services/sso/internal/storage"
@@ -48,7 +48,7 @@ func (s *Storage) SaveUser(
 	err = stmt.QueryRowContext(ctx, email, passHash).Scan(&id)
 
 	if err != nil {
-		var pgxErr pgx.PgError
+		var pgxErr *pgconn.PgError
 
 		if errors.As(err, &pgxErr) && pgxErr.Code == UniqueViolation {
 			return 0, fmt.Errorf("%s: %w", op, storage.ErrUserExists)
