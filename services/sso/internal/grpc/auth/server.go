@@ -115,12 +115,12 @@ func validateRegister(req *ssov1.RegisterRequest) error {
 	if req.GetEmail() == "" {
 		return status.Error(codes.InvalidArgument, "email is required")
 	}
-	if _, err := mail.ParseAddress(req.GetEmail()); err != nil {
-		return status.Error(codes.InvalidArgument, "invalid email")
-	}
-
 	if req.GetPassword() == "" {
 		return status.Error(codes.InvalidArgument, "password is required")
+	}
+
+	if _, err := mail.ParseAddress(req.GetEmail()); err != nil {
+		return status.Error(codes.InvalidArgument, "invalid email")
 	}
 	if len(req.GetPassword()) < 8 {
 		return status.Error(codes.InvalidArgument, "password length is less than 8")
@@ -133,19 +133,18 @@ func validateLogin(req *ssov1.LoginRequest) error {
 	if req.GetEmail() == "" {
 		return status.Error(codes.InvalidArgument, "email is required")
 	}
-	if _, err := mail.ParseAddress(req.GetEmail()); err != nil {
-		return status.Error(codes.InvalidArgument, "invalid email")
-	}
-
 	if req.GetPassword() == "" {
 		return status.Error(codes.InvalidArgument, "password is required")
 	}
-	if len(req.GetPassword()) < 8 {
-		return status.Error(codes.InvalidArgument, "password length is less than 8")
-	}
-
 	if req.GetAppId() == emptyValue {
 		return status.Error(codes.InvalidArgument, "app_id is required")
+	}
+
+	if _, err := mail.ParseAddress(req.GetEmail()); err != nil {
+		return status.Error(codes.InvalidArgument, "invalid email")
+	}
+	if len(req.GetPassword()) < 8 {
+		return status.Error(codes.InvalidArgument, "password length is less than 8")
 	}
 
 	return nil
