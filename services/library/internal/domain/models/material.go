@@ -22,6 +22,7 @@ type Material struct {
 	Bucket       string  // S3 bucket
 	ObjectKey    string  // S3 key
 	ThumbnailKey *string // S3 key for thumbnail (nil if not exists)
+	UploadStatus domain.UploadStatus
 
 	Metadata map[string]any // json metadata
 
