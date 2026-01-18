@@ -18,13 +18,15 @@ type Material struct {
 	MimeType     string
 	Extension    string
 	SizeBytes    int64
+	Checksum     string
 
 	Bucket       string  // S3 bucket
 	ObjectKey    string  // S3 key
 	ThumbnailKey *string // S3 key for thumbnail (nil if not exists)
 	UploadStatus domain.UploadStatus
 
-	Metadata map[string]any // json metadata
+	UserMetadata   map[string]any // json metadata
+	SystemMetadata map[string]any // json metadata
 
 	CreatedAt time.Time
 	UpdatedAt time.Time
