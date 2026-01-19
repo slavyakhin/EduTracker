@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package library.internal.v1;
+
+import "google/protobuf/struct.proto";
+import "library/common/v1/library_common.proto";
+
+option go_package = "github.com/slavyakhin/EduTracker/protos/gen/go/library/internal/v1;libraryinternalv1";
+
+service MaterialInternalService {
+  rpc UpdateUploadStatus(UpdateUploadStatusRequest) returns (UpdateUploadStatusResponse);
+  rpc FailUpload(FailUploadRequest) returns (FailUploadResponse);
+  rpc MarkUploaded(MarkUploadedRequest) returns (MarkUploadedResponse);
+  rpc StartProcessing(StartProcessingRequest) returns (StartProcessingResponse);
+  rpc CompleteProcessing(CompleteProcessingRequest) returns (CompleteProcessingResponse);
+  rpc UpdateThumbnail(UpdateThumbnailRequest) returns (UpdateThumbnailResponse);
+  rpc UpdateSystemMetadata(UpdateSystemMetadataRequest) returns (UpdateSystemMetadataResponse);
+}
+
+message UpdateUploadStatusRequest {
+  string material_id = 1;
+  library.common.v1.UploadStatus upload_status = 2;
+  int64 size_bytes = 3;
+  optional string checksum = 4;
+}
+
+message UpdateUploadStatusResponse {}
+
+message FailUploadRequest {
+  string material_id = 1;
+  string reason = 2;
+}
+
+message FailUploadResponse {}
+
+message MarkUploadedRequest {
+  string material_id = 1;
+  int64 size_bytes = 2;
+  optional string checksum = 3;
+}
+
+message MarkUploadedResponse {}
+
+message StartProcessingRequest {
+  string material_id = 1;
+}
+
+message StartProcessingResponse {}
+
+message CompleteProcessingRequest {
+  string material_id = 1;
+}
+
+message CompleteProcessingResponse {}
+
+message UpdateThumbnailRequest {
+  string material_id = 1;
+  string thumbnail_key = 2;
+}
+
+message UpdateThumbnailResponse {}
+
+message UpdateSystemMetadataRequest {
+  string material_id = 1;
+  map<string, google.protobuf.Value> system_metadata = 2;
+  repeated string remove_keys = 3;
+}
+
+message UpdateSystemMetadataResponse {}

@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package library.public.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "library/common/v1/library_common.proto";
+
+option go_package = "github.com/slavyakhin/EduTracker/protos/gen/go/library/public/v1;librarypublicv1";
+
+service MaterialService {
+  rpc CreateMaterial(CreateMaterialRequest) returns (CreateMaterialResponse);
+  rpc GetUploadUrl(GetUploadUrlRequest) returns (GetUploadUrlResponse);
+  rpc CompleteUpload(CompleteUploadRequest) returns (CompleteUploadResponse);
+  rpc GetMaterial(GetMaterialRequest) returns (GetMaterialResponse);
+  rpc ListMaterials(ListMaterialsRequest) returns (ListMaterialsResponse);
+  rpc UpdateMaterial(UpdateMaterialRequest) returns (UpdateMaterialResponse);
+  rpc UpdateUserMetadata(UpdateUserMetadataRequest) returns (UpdateUserMetadataResponse);
+  rpc DeleteMaterial(DeleteMaterialRequest) returns (DeleteMaterialResponse);
+  rpc GetDownloadUrl(GetDownloadUrlRequest) returns (GetDownloadUrlResponse);
+  rpc GetThumbnailUrl(GetThumbnailUrlRequest) returns (GetThumbnailUrlResponse);
+}
+
+message CreateMaterialRequest {
+  string title = 1;
+  optional string description = 2;
+}
+
+message CreateMaterialResponse {
+  library.common.v1.Material material = 1;
+  optional string upload_url = 2;
+}
+
+message GetUploadUrlRequest {
+  string material_id = 1;
+}
+
+message GetUploadUrlResponse {
+  string upload_url = 1;
+  google.protobuf.Timestamp expires_at = 2;
+}
+
+message CompleteUploadRequest {
+  string material_id = 1;
+  int64 size_bytes = 2;
+  optional string checksum = 3;
+}
+
+message CompleteUploadResponse {}
+
+message GetMaterialRequest {
+  string material_id = 1;
+}
+
+message GetMaterialResponse {
+  library.common.v1.Material material = 1;
+}
+
+message ListMaterialsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+  optional library.common.v1.MaterialType material_type = 3;
+  optional library.common.v1.UploadStatus upload_status = 4;
+}
+
+message ListMaterialsResponse {
+  repeated library.common.v1.Material materials = 1;
+
+  string next_page_token = 2;
+}
+
+message UpdateMaterialRequest {
+  library.common.v1.Material material = 1;
+
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+message UpdateMaterialResponse {
+  library.common.v1.Material material = 1;
+}
+
+message UpdateUserMetadataRequest {
+  string material_id = 1;
+  map<string, google.protobuf.Value> user_metadata = 2;
+  repeated string remove_keys = 3;
+}
+
+message UpdateUserMetadataResponse {}
+
+message DeleteMaterialRequest {
+  string material_id = 1;
+}
+
+message DeleteMaterialResponse {}
+
+message GetDownloadUrlRequest {
+  string material_id = 1;
+}
+
+message GetDownloadUrlResponse {
+  string download_url = 1;
+  google.protobuf.Timestamp expires_at = 2;
+}
+
+message GetThumbnailUrlRequest {
+  string material_id = 1;
+}
+
+message GetThumbnailUrlResponse {
+  string thumbnail_url = 1;
+  google.protobuf.Timestamp expires_at = 2;
+}

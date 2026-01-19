@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package library.common.v1;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/slavyakhin/EduTracker/protos/gen/go/library/common/v1;librarycommonv1";
+
+enum MaterialType {
+  MATERIAL_TYPE_UNSPECIFIED = 0;
+  MATERIAL_TYPE_IMAGE = 1;
+  MATERIAL_TYPE_DOCUMENT = 2;
+  MATERIAL_TYPE_TEXT = 3;
+  MATERIAL_TYPE_VIDEO = 4;
+}
+
+enum UploadStatus {
+  UPLOAD_STATUS_UNSPECIFIED = 0;
+  UPLOAD_STATUS_CREATED = 1;
+  UPLOAD_STATUS_UPLOADING = 2;
+  UPLOAD_STATUS_UPLOADED = 3;
+  UPLOAD_STATUS_PROCESSING = 4;
+  UPLOAD_STATUS_READY = 5;
+  UPLOAD_STATUS_FAILED = 6;
+}
+
+message Material {
+  string id = 1;
+  int64 owner_id = 2;
+
+  string title = 3;
+  optional string description = 4;
+
+  MaterialType material_type = 5;
+  string mime_type = 6;
+  string extension = 7;
+  int64 size_bytes = 8;
+  optional string checksum = 9;
+
+  string bucket = 10;
+  string object_key = 11;
+  optional string thumbnail_key = 12;
+  UploadStatus upload_status = 13;
+
+  map<string, google.protobuf.Value> user_metadata = 14;
+  map<string, google.protobuf.Value> system_metadata = 15;
+
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp uploaded_at = 17;
+  google.protobuf.Timestamp deleted_at = 18;
+}

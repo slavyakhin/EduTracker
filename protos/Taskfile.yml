@@ -3,9 +3,27 @@
 version: '3'
 
 tasks:
-  generate:
+  generateSSO:
     aliases:
-      - gen
-    desc: "Generate code from proto files"
+      - gensso
+    desc: "Generate sso go code from proto files"
     cmds:
-      - protoc -I ./proto/ ./proto/sso/*.proto --go_out="./gen/go" --go_opt=paths=source_relative --go-grpc_out=./gen/go/ --go-grpc_opt=paths=source_relative
+      - protoc
+        -I ./proto/
+        ./proto/sso/*.proto
+        --go_out="./gen/go"
+        --go_opt=paths=source_relative 
+        --go-grpc_out=./gen/go/
+        --go-grpc_opt=paths=source_relative
+  generateLibrary:
+    aliases:
+      - genlib
+    desc: "Generate library/*/v1/ go code from proto files"
+    cmds:
+      - protoc
+        -I ./proto/
+        ./proto/library/*/v1/*.proto
+        --go_out="./gen/go"
+        --go_opt=paths=source_relative
+        --go-grpc_out=./gen/go/
+        --go-grpc_opt=paths=source_relative
