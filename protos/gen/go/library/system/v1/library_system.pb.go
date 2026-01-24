@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v6.33.2
-// source: library/internal/v1/library_internal.proto
+// source: library/system/v1/library_system.proto
 
-package libraryinternalv1
+package librarysystemv1
 
 import (
 	v1 "github.com/slavyakhin/EduTracker/protos/gen/go/library/common/v1"
@@ -35,7 +35,7 @@ type UpdateUploadStatusRequest struct {
 
 func (x *UpdateUploadStatusRequest) Reset() {
 	*x = UpdateUploadStatusRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[0]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47,7 +47,7 @@ func (x *UpdateUploadStatusRequest) String() string {
 func (*UpdateUploadStatusRequest) ProtoMessage() {}
 
 func (x *UpdateUploadStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[0]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *UpdateUploadStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUploadStatusRequest.ProtoReflect.Descriptor instead.
 func (*UpdateUploadStatusRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{0}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *UpdateUploadStatusRequest) GetMaterialId() string {
@@ -99,7 +99,7 @@ type UpdateUploadStatusResponse struct {
 
 func (x *UpdateUploadStatusResponse) Reset() {
 	*x = UpdateUploadStatusResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[1]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -111,7 +111,7 @@ func (x *UpdateUploadStatusResponse) String() string {
 func (*UpdateUploadStatusResponse) ProtoMessage() {}
 
 func (x *UpdateUploadStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[1]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *UpdateUploadStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateUploadStatusResponse.ProtoReflect.Descriptor instead.
 func (*UpdateUploadStatusResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{1}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{1}
 }
 
 type FailUploadRequest struct {
@@ -137,7 +137,7 @@ type FailUploadRequest struct {
 
 func (x *FailUploadRequest) Reset() {
 	*x = FailUploadRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[2]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -149,7 +149,7 @@ func (x *FailUploadRequest) String() string {
 func (*FailUploadRequest) ProtoMessage() {}
 
 func (x *FailUploadRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[2]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -162,7 +162,7 @@ func (x *FailUploadRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FailUploadRequest.ProtoReflect.Descriptor instead.
 func (*FailUploadRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{2}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *FailUploadRequest) GetMaterialId() string {
@@ -187,7 +187,7 @@ type FailUploadResponse struct {
 
 func (x *FailUploadResponse) Reset() {
 	*x = FailUploadResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[3]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -199,7 +199,7 @@ func (x *FailUploadResponse) String() string {
 func (*FailUploadResponse) ProtoMessage() {}
 
 func (x *FailUploadResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[3]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -212,7 +212,7 @@ func (x *FailUploadResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FailUploadResponse.ProtoReflect.Descriptor instead.
 func (*FailUploadResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{3}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{3}
 }
 
 type MarkUploadedRequest struct {
@@ -226,7 +226,7 @@ type MarkUploadedRequest struct {
 
 func (x *MarkUploadedRequest) Reset() {
 	*x = MarkUploadedRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[4]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -238,7 +238,7 @@ func (x *MarkUploadedRequest) String() string {
 func (*MarkUploadedRequest) ProtoMessage() {}
 
 func (x *MarkUploadedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[4]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -251,7 +251,7 @@ func (x *MarkUploadedRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkUploadedRequest.ProtoReflect.Descriptor instead.
 func (*MarkUploadedRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{4}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *MarkUploadedRequest) GetMaterialId() string {
@@ -283,7 +283,7 @@ type MarkUploadedResponse struct {
 
 func (x *MarkUploadedResponse) Reset() {
 	*x = MarkUploadedResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[5]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -295,7 +295,7 @@ func (x *MarkUploadedResponse) String() string {
 func (*MarkUploadedResponse) ProtoMessage() {}
 
 func (x *MarkUploadedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[5]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *MarkUploadedResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MarkUploadedResponse.ProtoReflect.Descriptor instead.
 func (*MarkUploadedResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{5}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{5}
 }
 
 type StartProcessingRequest struct {
@@ -320,7 +320,7 @@ type StartProcessingRequest struct {
 
 func (x *StartProcessingRequest) Reset() {
 	*x = StartProcessingRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[6]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -332,7 +332,7 @@ func (x *StartProcessingRequest) String() string {
 func (*StartProcessingRequest) ProtoMessage() {}
 
 func (x *StartProcessingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[6]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -345,7 +345,7 @@ func (x *StartProcessingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartProcessingRequest.ProtoReflect.Descriptor instead.
 func (*StartProcessingRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{6}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *StartProcessingRequest) GetMaterialId() string {
@@ -363,7 +363,7 @@ type StartProcessingResponse struct {
 
 func (x *StartProcessingResponse) Reset() {
 	*x = StartProcessingResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[7]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -375,7 +375,7 @@ func (x *StartProcessingResponse) String() string {
 func (*StartProcessingResponse) ProtoMessage() {}
 
 func (x *StartProcessingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[7]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *StartProcessingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartProcessingResponse.ProtoReflect.Descriptor instead.
 func (*StartProcessingResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{7}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{7}
 }
 
 type CompleteProcessingRequest struct {
@@ -400,7 +400,7 @@ type CompleteProcessingRequest struct {
 
 func (x *CompleteProcessingRequest) Reset() {
 	*x = CompleteProcessingRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[8]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -412,7 +412,7 @@ func (x *CompleteProcessingRequest) String() string {
 func (*CompleteProcessingRequest) ProtoMessage() {}
 
 func (x *CompleteProcessingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[8]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -425,7 +425,7 @@ func (x *CompleteProcessingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompleteProcessingRequest.ProtoReflect.Descriptor instead.
 func (*CompleteProcessingRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{8}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CompleteProcessingRequest) GetMaterialId() string {
@@ -443,7 +443,7 @@ type CompleteProcessingResponse struct {
 
 func (x *CompleteProcessingResponse) Reset() {
 	*x = CompleteProcessingResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[9]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -455,7 +455,7 @@ func (x *CompleteProcessingResponse) String() string {
 func (*CompleteProcessingResponse) ProtoMessage() {}
 
 func (x *CompleteProcessingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[9]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -468,7 +468,7 @@ func (x *CompleteProcessingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompleteProcessingResponse.ProtoReflect.Descriptor instead.
 func (*CompleteProcessingResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{9}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{9}
 }
 
 type UpdateThumbnailRequest struct {
@@ -481,7 +481,7 @@ type UpdateThumbnailRequest struct {
 
 func (x *UpdateThumbnailRequest) Reset() {
 	*x = UpdateThumbnailRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[10]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -493,7 +493,7 @@ func (x *UpdateThumbnailRequest) String() string {
 func (*UpdateThumbnailRequest) ProtoMessage() {}
 
 func (x *UpdateThumbnailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[10]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -506,7 +506,7 @@ func (x *UpdateThumbnailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateThumbnailRequest.ProtoReflect.Descriptor instead.
 func (*UpdateThumbnailRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{10}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *UpdateThumbnailRequest) GetMaterialId() string {
@@ -531,7 +531,7 @@ type UpdateThumbnailResponse struct {
 
 func (x *UpdateThumbnailResponse) Reset() {
 	*x = UpdateThumbnailResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[11]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -543,7 +543,7 @@ func (x *UpdateThumbnailResponse) String() string {
 func (*UpdateThumbnailResponse) ProtoMessage() {}
 
 func (x *UpdateThumbnailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[11]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -556,7 +556,7 @@ func (x *UpdateThumbnailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateThumbnailResponse.ProtoReflect.Descriptor instead.
 func (*UpdateThumbnailResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{11}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{11}
 }
 
 type UpdateSystemMetadataRequest struct {
@@ -570,7 +570,7 @@ type UpdateSystemMetadataRequest struct {
 
 func (x *UpdateSystemMetadataRequest) Reset() {
 	*x = UpdateSystemMetadataRequest{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[12]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -582,7 +582,7 @@ func (x *UpdateSystemMetadataRequest) String() string {
 func (*UpdateSystemMetadataRequest) ProtoMessage() {}
 
 func (x *UpdateSystemMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[12]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -595,7 +595,7 @@ func (x *UpdateSystemMetadataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSystemMetadataRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSystemMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{12}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UpdateSystemMetadataRequest) GetMaterialId() string {
@@ -627,7 +627,7 @@ type UpdateSystemMetadataResponse struct {
 
 func (x *UpdateSystemMetadataResponse) Reset() {
 	*x = UpdateSystemMetadataResponse{}
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[13]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -639,7 +639,7 @@ func (x *UpdateSystemMetadataResponse) String() string {
 func (*UpdateSystemMetadataResponse) ProtoMessage() {}
 
 func (x *UpdateSystemMetadataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_library_internal_v1_library_internal_proto_msgTypes[13]
+	mi := &file_library_system_v1_library_system_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,14 +652,14 @@ func (x *UpdateSystemMetadataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSystemMetadataResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSystemMetadataResponse) Descriptor() ([]byte, []int) {
-	return file_library_internal_v1_library_internal_proto_rawDescGZIP(), []int{13}
+	return file_library_system_v1_library_system_proto_rawDescGZIP(), []int{13}
 }
 
-var File_library_internal_v1_library_internal_proto protoreflect.FileDescriptor
+var File_library_system_v1_library_system_proto protoreflect.FileDescriptor
 
-const file_library_internal_v1_library_internal_proto_rawDesc = "" +
+const file_library_system_v1_library_system_proto_rawDesc = "" +
 	"\n" +
-	"*library/internal/v1/library_internal.proto\x12\x13library.internal.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a&library/common/v1/library_common.proto\"\xcf\x01\n" +
+	"&library/system/v1/library_system.proto\x12\x11library.system.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a&library/common/v1/library_common.proto\"\xcf\x01\n" +
 	"\x19UpdateUploadStatusRequest\x12\x1f\n" +
 	"\vmaterial_id\x18\x01 \x01(\tR\n" +
 	"materialId\x12D\n" +
@@ -694,77 +694,77 @@ const file_library_internal_v1_library_internal_proto_rawDesc = "" +
 	"\vmaterial_id\x18\x01 \x01(\tR\n" +
 	"materialId\x12#\n" +
 	"\rthumbnail_key\x18\x02 \x01(\tR\fthumbnailKey\"\x19\n" +
-	"\x17UpdateThumbnailResponse\"\xa9\x02\n" +
+	"\x17UpdateThumbnailResponse\"\xa7\x02\n" +
 	"\x1bUpdateSystemMetadataRequest\x12\x1f\n" +
 	"\vmaterial_id\x18\x01 \x01(\tR\n" +
-	"materialId\x12m\n" +
-	"\x0fsystem_metadata\x18\x02 \x03(\v2D.library.internal.v1.UpdateSystemMetadataRequest.SystemMetadataEntryR\x0esystemMetadata\x12\x1f\n" +
+	"materialId\x12k\n" +
+	"\x0fsystem_metadata\x18\x02 \x03(\v2B.library.system.v1.UpdateSystemMetadataRequest.SystemMetadataEntryR\x0esystemMetadata\x12\x1f\n" +
 	"\vremove_keys\x18\x03 \x03(\tR\n" +
 	"removeKeys\x1aY\n" +
 	"\x13SystemMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
 	"\x05value\x18\x02 \x01(\v2\x16.google.protobuf.ValueR\x05value:\x028\x01\"\x1e\n" +
-	"\x1cUpdateSystemMetadataResponse2\xa4\x06\n" +
-	"\x17MaterialInternalService\x12u\n" +
-	"\x12UpdateUploadStatus\x12..library.internal.v1.UpdateUploadStatusRequest\x1a/.library.internal.v1.UpdateUploadStatusResponse\x12]\n" +
+	"\x1cUpdateSystemMetadataResponse2\x86\x06\n" +
+	"\x15MaterialSystemService\x12q\n" +
+	"\x12UpdateUploadStatus\x12,.library.system.v1.UpdateUploadStatusRequest\x1a-.library.system.v1.UpdateUploadStatusResponse\x12Y\n" +
 	"\n" +
-	"FailUpload\x12&.library.internal.v1.FailUploadRequest\x1a'.library.internal.v1.FailUploadResponse\x12c\n" +
-	"\fMarkUploaded\x12(.library.internal.v1.MarkUploadedRequest\x1a).library.internal.v1.MarkUploadedResponse\x12l\n" +
-	"\x0fStartProcessing\x12+.library.internal.v1.StartProcessingRequest\x1a,.library.internal.v1.StartProcessingResponse\x12u\n" +
-	"\x12CompleteProcessing\x12..library.internal.v1.CompleteProcessingRequest\x1a/.library.internal.v1.CompleteProcessingResponse\x12l\n" +
-	"\x0fUpdateThumbnail\x12+.library.internal.v1.UpdateThumbnailRequest\x1a,.library.internal.v1.UpdateThumbnailResponse\x12{\n" +
-	"\x14UpdateSystemMetadata\x120.library.internal.v1.UpdateSystemMetadataRequest\x1a1.library.internal.v1.UpdateSystemMetadataResponseBVZTgithub.com/slavyakhin/EduTracker/protos/gen/go/library/internal/v1;libraryinternalv1b\x06proto3"
+	"FailUpload\x12$.library.system.v1.FailUploadRequest\x1a%.library.system.v1.FailUploadResponse\x12_\n" +
+	"\fMarkUploaded\x12&.library.system.v1.MarkUploadedRequest\x1a'.library.system.v1.MarkUploadedResponse\x12h\n" +
+	"\x0fStartProcessing\x12).library.system.v1.StartProcessingRequest\x1a*.library.system.v1.StartProcessingResponse\x12q\n" +
+	"\x12CompleteProcessing\x12,.library.system.v1.CompleteProcessingRequest\x1a-.library.system.v1.CompleteProcessingResponse\x12h\n" +
+	"\x0fUpdateThumbnail\x12).library.system.v1.UpdateThumbnailRequest\x1a*.library.system.v1.UpdateThumbnailResponse\x12w\n" +
+	"\x14UpdateSystemMetadata\x12..library.system.v1.UpdateSystemMetadataRequest\x1a/.library.system.v1.UpdateSystemMetadataResponseBRZPgithub.com/slavyakhin/EduTracker/protos/gen/go/library/system/v1;librarysystemv1b\x06proto3"
 
 var (
-	file_library_internal_v1_library_internal_proto_rawDescOnce sync.Once
-	file_library_internal_v1_library_internal_proto_rawDescData []byte
+	file_library_system_v1_library_system_proto_rawDescOnce sync.Once
+	file_library_system_v1_library_system_proto_rawDescData []byte
 )
 
-func file_library_internal_v1_library_internal_proto_rawDescGZIP() []byte {
-	file_library_internal_v1_library_internal_proto_rawDescOnce.Do(func() {
-		file_library_internal_v1_library_internal_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_library_internal_v1_library_internal_proto_rawDesc), len(file_library_internal_v1_library_internal_proto_rawDesc)))
+func file_library_system_v1_library_system_proto_rawDescGZIP() []byte {
+	file_library_system_v1_library_system_proto_rawDescOnce.Do(func() {
+		file_library_system_v1_library_system_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_library_system_v1_library_system_proto_rawDesc), len(file_library_system_v1_library_system_proto_rawDesc)))
 	})
-	return file_library_internal_v1_library_internal_proto_rawDescData
+	return file_library_system_v1_library_system_proto_rawDescData
 }
 
-var file_library_internal_v1_library_internal_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_library_internal_v1_library_internal_proto_goTypes = []any{
-	(*UpdateUploadStatusRequest)(nil),    // 0: library.internal.v1.UpdateUploadStatusRequest
-	(*UpdateUploadStatusResponse)(nil),   // 1: library.internal.v1.UpdateUploadStatusResponse
-	(*FailUploadRequest)(nil),            // 2: library.internal.v1.FailUploadRequest
-	(*FailUploadResponse)(nil),           // 3: library.internal.v1.FailUploadResponse
-	(*MarkUploadedRequest)(nil),          // 4: library.internal.v1.MarkUploadedRequest
-	(*MarkUploadedResponse)(nil),         // 5: library.internal.v1.MarkUploadedResponse
-	(*StartProcessingRequest)(nil),       // 6: library.internal.v1.StartProcessingRequest
-	(*StartProcessingResponse)(nil),      // 7: library.internal.v1.StartProcessingResponse
-	(*CompleteProcessingRequest)(nil),    // 8: library.internal.v1.CompleteProcessingRequest
-	(*CompleteProcessingResponse)(nil),   // 9: library.internal.v1.CompleteProcessingResponse
-	(*UpdateThumbnailRequest)(nil),       // 10: library.internal.v1.UpdateThumbnailRequest
-	(*UpdateThumbnailResponse)(nil),      // 11: library.internal.v1.UpdateThumbnailResponse
-	(*UpdateSystemMetadataRequest)(nil),  // 12: library.internal.v1.UpdateSystemMetadataRequest
-	(*UpdateSystemMetadataResponse)(nil), // 13: library.internal.v1.UpdateSystemMetadataResponse
-	nil,                                  // 14: library.internal.v1.UpdateSystemMetadataRequest.SystemMetadataEntry
+var file_library_system_v1_library_system_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_library_system_v1_library_system_proto_goTypes = []any{
+	(*UpdateUploadStatusRequest)(nil),    // 0: library.system.v1.UpdateUploadStatusRequest
+	(*UpdateUploadStatusResponse)(nil),   // 1: library.system.v1.UpdateUploadStatusResponse
+	(*FailUploadRequest)(nil),            // 2: library.system.v1.FailUploadRequest
+	(*FailUploadResponse)(nil),           // 3: library.system.v1.FailUploadResponse
+	(*MarkUploadedRequest)(nil),          // 4: library.system.v1.MarkUploadedRequest
+	(*MarkUploadedResponse)(nil),         // 5: library.system.v1.MarkUploadedResponse
+	(*StartProcessingRequest)(nil),       // 6: library.system.v1.StartProcessingRequest
+	(*StartProcessingResponse)(nil),      // 7: library.system.v1.StartProcessingResponse
+	(*CompleteProcessingRequest)(nil),    // 8: library.system.v1.CompleteProcessingRequest
+	(*CompleteProcessingResponse)(nil),   // 9: library.system.v1.CompleteProcessingResponse
+	(*UpdateThumbnailRequest)(nil),       // 10: library.system.v1.UpdateThumbnailRequest
+	(*UpdateThumbnailResponse)(nil),      // 11: library.system.v1.UpdateThumbnailResponse
+	(*UpdateSystemMetadataRequest)(nil),  // 12: library.system.v1.UpdateSystemMetadataRequest
+	(*UpdateSystemMetadataResponse)(nil), // 13: library.system.v1.UpdateSystemMetadataResponse
+	nil,                                  // 14: library.system.v1.UpdateSystemMetadataRequest.SystemMetadataEntry
 	(v1.UploadStatus)(0),                 // 15: library.common.v1.UploadStatus
 	(*structpb.Value)(nil),               // 16: google.protobuf.Value
 }
-var file_library_internal_v1_library_internal_proto_depIdxs = []int32{
-	15, // 0: library.internal.v1.UpdateUploadStatusRequest.upload_status:type_name -> library.common.v1.UploadStatus
-	14, // 1: library.internal.v1.UpdateSystemMetadataRequest.system_metadata:type_name -> library.internal.v1.UpdateSystemMetadataRequest.SystemMetadataEntry
-	16, // 2: library.internal.v1.UpdateSystemMetadataRequest.SystemMetadataEntry.value:type_name -> google.protobuf.Value
-	0,  // 3: library.internal.v1.MaterialInternalService.UpdateUploadStatus:input_type -> library.internal.v1.UpdateUploadStatusRequest
-	2,  // 4: library.internal.v1.MaterialInternalService.FailUpload:input_type -> library.internal.v1.FailUploadRequest
-	4,  // 5: library.internal.v1.MaterialInternalService.MarkUploaded:input_type -> library.internal.v1.MarkUploadedRequest
-	6,  // 6: library.internal.v1.MaterialInternalService.StartProcessing:input_type -> library.internal.v1.StartProcessingRequest
-	8,  // 7: library.internal.v1.MaterialInternalService.CompleteProcessing:input_type -> library.internal.v1.CompleteProcessingRequest
-	10, // 8: library.internal.v1.MaterialInternalService.UpdateThumbnail:input_type -> library.internal.v1.UpdateThumbnailRequest
-	12, // 9: library.internal.v1.MaterialInternalService.UpdateSystemMetadata:input_type -> library.internal.v1.UpdateSystemMetadataRequest
-	1,  // 10: library.internal.v1.MaterialInternalService.UpdateUploadStatus:output_type -> library.internal.v1.UpdateUploadStatusResponse
-	3,  // 11: library.internal.v1.MaterialInternalService.FailUpload:output_type -> library.internal.v1.FailUploadResponse
-	5,  // 12: library.internal.v1.MaterialInternalService.MarkUploaded:output_type -> library.internal.v1.MarkUploadedResponse
-	7,  // 13: library.internal.v1.MaterialInternalService.StartProcessing:output_type -> library.internal.v1.StartProcessingResponse
-	9,  // 14: library.internal.v1.MaterialInternalService.CompleteProcessing:output_type -> library.internal.v1.CompleteProcessingResponse
-	11, // 15: library.internal.v1.MaterialInternalService.UpdateThumbnail:output_type -> library.internal.v1.UpdateThumbnailResponse
-	13, // 16: library.internal.v1.MaterialInternalService.UpdateSystemMetadata:output_type -> library.internal.v1.UpdateSystemMetadataResponse
+var file_library_system_v1_library_system_proto_depIdxs = []int32{
+	15, // 0: library.system.v1.UpdateUploadStatusRequest.upload_status:type_name -> library.common.v1.UploadStatus
+	14, // 1: library.system.v1.UpdateSystemMetadataRequest.system_metadata:type_name -> library.system.v1.UpdateSystemMetadataRequest.SystemMetadataEntry
+	16, // 2: library.system.v1.UpdateSystemMetadataRequest.SystemMetadataEntry.value:type_name -> google.protobuf.Value
+	0,  // 3: library.system.v1.MaterialSystemService.UpdateUploadStatus:input_type -> library.system.v1.UpdateUploadStatusRequest
+	2,  // 4: library.system.v1.MaterialSystemService.FailUpload:input_type -> library.system.v1.FailUploadRequest
+	4,  // 5: library.system.v1.MaterialSystemService.MarkUploaded:input_type -> library.system.v1.MarkUploadedRequest
+	6,  // 6: library.system.v1.MaterialSystemService.StartProcessing:input_type -> library.system.v1.StartProcessingRequest
+	8,  // 7: library.system.v1.MaterialSystemService.CompleteProcessing:input_type -> library.system.v1.CompleteProcessingRequest
+	10, // 8: library.system.v1.MaterialSystemService.UpdateThumbnail:input_type -> library.system.v1.UpdateThumbnailRequest
+	12, // 9: library.system.v1.MaterialSystemService.UpdateSystemMetadata:input_type -> library.system.v1.UpdateSystemMetadataRequest
+	1,  // 10: library.system.v1.MaterialSystemService.UpdateUploadStatus:output_type -> library.system.v1.UpdateUploadStatusResponse
+	3,  // 11: library.system.v1.MaterialSystemService.FailUpload:output_type -> library.system.v1.FailUploadResponse
+	5,  // 12: library.system.v1.MaterialSystemService.MarkUploaded:output_type -> library.system.v1.MarkUploadedResponse
+	7,  // 13: library.system.v1.MaterialSystemService.StartProcessing:output_type -> library.system.v1.StartProcessingResponse
+	9,  // 14: library.system.v1.MaterialSystemService.CompleteProcessing:output_type -> library.system.v1.CompleteProcessingResponse
+	11, // 15: library.system.v1.MaterialSystemService.UpdateThumbnail:output_type -> library.system.v1.UpdateThumbnailResponse
+	13, // 16: library.system.v1.MaterialSystemService.UpdateSystemMetadata:output_type -> library.system.v1.UpdateSystemMetadataResponse
 	10, // [10:17] is the sub-list for method output_type
 	3,  // [3:10] is the sub-list for method input_type
 	3,  // [3:3] is the sub-list for extension type_name
@@ -772,28 +772,28 @@ var file_library_internal_v1_library_internal_proto_depIdxs = []int32{
 	0,  // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_library_internal_v1_library_internal_proto_init() }
-func file_library_internal_v1_library_internal_proto_init() {
-	if File_library_internal_v1_library_internal_proto != nil {
+func init() { file_library_system_v1_library_system_proto_init() }
+func file_library_system_v1_library_system_proto_init() {
+	if File_library_system_v1_library_system_proto != nil {
 		return
 	}
-	file_library_internal_v1_library_internal_proto_msgTypes[0].OneofWrappers = []any{}
-	file_library_internal_v1_library_internal_proto_msgTypes[4].OneofWrappers = []any{}
+	file_library_system_v1_library_system_proto_msgTypes[0].OneofWrappers = []any{}
+	file_library_system_v1_library_system_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_library_internal_v1_library_internal_proto_rawDesc), len(file_library_internal_v1_library_internal_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_library_system_v1_library_system_proto_rawDesc), len(file_library_system_v1_library_system_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_library_internal_v1_library_internal_proto_goTypes,
-		DependencyIndexes: file_library_internal_v1_library_internal_proto_depIdxs,
-		MessageInfos:      file_library_internal_v1_library_internal_proto_msgTypes,
+		GoTypes:           file_library_system_v1_library_system_proto_goTypes,
+		DependencyIndexes: file_library_system_v1_library_system_proto_depIdxs,
+		MessageInfos:      file_library_system_v1_library_system_proto_msgTypes,
 	}.Build()
-	File_library_internal_v1_library_internal_proto = out.File
-	file_library_internal_v1_library_internal_proto_goTypes = nil
-	file_library_internal_v1_library_internal_proto_depIdxs = nil
+	File_library_system_v1_library_system_proto = out.File
+	file_library_system_v1_library_system_proto_goTypes = nil
+	file_library_system_v1_library_system_proto_depIdxs = nil
 }

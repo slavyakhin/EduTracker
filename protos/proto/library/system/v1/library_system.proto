@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package library.internal.v1;
+package library.system.v1;
 
 import "google/protobuf/struct.proto";
 import "library/common/v1/library_common.proto";
 
-option go_package = "github.com/slavyakhin/EduTracker/protos/gen/go/library/internal/v1;libraryinternalv1";
+option go_package = "github.com/slavyakhin/EduTracker/protos/gen/go/library/system/v1;librarysystemv1";
 
-service MaterialInternalService {
+service MaterialSystemService {
   rpc UpdateUploadStatus(UpdateUploadStatusRequest) returns (UpdateUploadStatusResponse);
   rpc FailUpload(FailUploadRequest) returns (FailUploadResponse);
   rpc MarkUploaded(MarkUploadedRequest) returns (MarkUploadedResponse);
