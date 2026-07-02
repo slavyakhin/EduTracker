@@ -1,12 +1,36 @@
 package domain
 
-type UploadStatus string
+import "fmt"
+
+type UploadStatus int
 
 const (
-	StatusCreated    UploadStatus = "CREATED"
-	StatusUploading  UploadStatus = "UPLOADING"
-	StatusUploaded   UploadStatus = "UPLOADED"
-	StatusProcessing UploadStatus = "PROCESSING"
-	StatusReady      UploadStatus = "READY"
-	StatusFailed     UploadStatus = "FAILED"
+	StatusUnknown UploadStatus = iota
+	StatusCreated
+	StatusUploading
+	StatusUploaded
+	StatusProcessing
+	StatusReady
+	StatusFailed
 )
+
+func (us UploadStatus) String() string {
+	switch us {
+	case StatusUnknown:
+		return "UNKNOWN"
+	case StatusCreated:
+		return "CREATED"
+	case StatusUploading:
+		return "UPLOADING"
+	case StatusUploaded:
+		return "UPLOADED"
+	case StatusProcessing:
+		return "PROCESSING"
+	case StatusReady:
+		return "READY"
+	case StatusFailed:
+		return "FAILED"
+	default:
+		return fmt.Sprintf("UploadStatus(%d)", int(us))
+	}
+}
