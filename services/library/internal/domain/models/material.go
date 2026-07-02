@@ -18,7 +18,7 @@ type Material struct {
 	MimeType     string
 	Extension    string
 	SizeBytes    int64
-	Checksum     string
+	Checksum     *string
 
 	Bucket       string  // S3 bucket
 	ObjectKey    string  // S3 key
