@@ -18,7 +18,7 @@ type Auth struct {
 	userSaver    UserSaver
 	userProvider UserProvider
 	appProvider  AppProvider
-	toketTTL     time.Duration
+	tokenTTL     time.Duration
 }
 
 type UserSaver interface {
@@ -58,7 +58,7 @@ func New(
 		userSaver:    userSaver,
 		userProvider: userProvider,
 		appProvider:  appProvider,
-		toketTTL:     tokenTTL,
+		tokenTTL:     tokenTTL,
 	}
 }
 
@@ -147,7 +147,7 @@ func (a *Auth) Login(
 
 	log.Info("user logged in successfully")
 
-	token, err := jwt.NewToken(user, app, a.toketTTL)
+	token, err := jwt.NewToken(user, app, a.tokenTTL)
 	if err != nil {
 		a.log.Error("failed to generate token", slog.Any("err", err))
 
